@@ -33,7 +33,6 @@ export interface BUNDLE_TRANSACTION {
 export declare class EnvironmentManager {
     private static NET_MODE;
     private static JITO_BLOCKENGINE_URL;
-    private static RPC_CHECK_URL;
     private static RPC_MAIN_URL;
     private static RPC_DEVNET_URL;
     private static RPC_TESTNET_URL;
@@ -50,7 +49,6 @@ export declare class EnvironmentManager {
     static getRpcNetUrl(): string;
     static setNetUrls(main_url: string, dev_url: string, test_url?: string): void;
     static getBundlrUrl(): string;
-    static getCheckUrl(): string;
     static getProgramID(): ProgramId;
     static setQuoteTokenInfo(token_info: TOKEN_INFO): void;
     static getQuoteTokenInfo(): TOKEN_INFO;

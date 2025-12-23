@@ -1,4 +1,3 @@
-/// <reference types="jito-ts/node_modules/@solana/web3.js" />
 import { Connection, Keypair, Signer, Transaction, VersionedTransaction } from "@solana/web3.js";
 export interface TransactionInfo {
     txn: VersionedTransaction;

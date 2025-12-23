@@ -33,7 +33,6 @@ export interface BUNDLE_TRANSACTION {
 export declare class EnvironmentManager {
     private static NET_MODE;
     private static JITO_BLOCKENGINE_URL;
-    private static RPC_CHECK_URL;
     private static RPC_MAIN_URL;
     private static RPC_DEVNET_URL;
     private static RPC_TESTNET_URL;

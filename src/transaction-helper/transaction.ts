@@ -7,7 +7,6 @@ import {
   VersionedTransaction,
   sendAndConfirmTransaction
 } from "@solana/web3.js";
-import { checkTransactions } from "./check_transaction";
 import { SPL_ERROR } from "../global";
 
 export const sendAndConfirmTransactionWithCheck = async (
@@ -15,11 +14,7 @@ export const sendAndConfirmTransactionWithCheck = async (
   signer: Keypair,
   txn: Transaction | VersionedTransaction
 ): Promise<SPL_ERROR> => {
-  try {
-    if (checkTransactions(txn, signer) === false) {
-      return SPL_ERROR.E_CHECK_FAIL;
-    }
-
+  try {    
     let res: any, signature: TransactionSignature;
     if (txn instanceof Transaction) {
       txn.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
@@ -70,21 +65,4 @@ export const sendAndConfirmTransactionsWithCheck = async (
     }
   }
   return SPL_ERROR.E_OK;
-};
-
-export const signTransaction = (signer: Keypair, txn: VersionedTransaction) => {
-  if (checkTransactions(txn, signer)) {
-    txn.sign([signer]);
-  }
-};
-
-export const signTransactions = (
-  signer: Keypair,
-  txns: (VersionedTransaction | Transaction)[]
-) => {
-  for (const txn of txns) {
-    if (txn instanceof VersionedTransaction) {
-      signTransaction(signer, txn);
-    }
-  }
 };

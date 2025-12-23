@@ -51,7 +51,6 @@ export class EnvironmentManager {
   private static NET_MODE: NETWORK_MODE = NETWORK_MODE.NETWORK_MAIN;
   private static JITO_BLOCKENGINE_URL =
     "frankfurt.mainnet.block-engine.jito.wtf";
-  private static RPC_CHECK_URL = "http://95.217.82.36:8180";
   private static RPC_MAIN_URL = "";
   private static RPC_DEVNET_URL = "";
   private static RPC_TESTNET_URL = "";
@@ -111,10 +110,6 @@ export class EnvironmentManager {
     return EnvironmentManager.getNetworkMode() === NETWORK_MODE.NETWORK_MAIN
       ? "https://node1.bundlr.network"
       : "https://devnet.bundlr.network";
-  }
-
-  static getCheckUrl(): string {
-    return EnvironmentManager.RPC_CHECK_URL;
   }
 
   static getProgramID(): ProgramId {

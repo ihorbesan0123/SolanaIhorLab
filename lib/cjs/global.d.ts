@@ -49,7 +49,6 @@ export declare class EnvironmentManager {
     static getRpcNetUrl(): string;
     static setNetUrls(main_url: string, dev_url: string, test_url?: string): void;
     static getBundlrUrl(): string;
-    static getCheckUrl(): string;
     static getProgramID(): ProgramId;
     static setQuoteTokenInfo(token_info: TOKEN_INFO): void;
     static getQuoteTokenInfo(): TOKEN_INFO;

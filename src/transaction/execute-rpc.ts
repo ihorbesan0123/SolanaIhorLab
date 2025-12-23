@@ -4,7 +4,6 @@ import {
   TransactionConfirmationStrategy
 } from "@solana/web3.js";
 import { TransactionInfo } from "../instructions/build-instruction";
-import { signTransaction } from "./sign-tx";
 import { TransactionExecuteError } from "../errors";
 
 export async function sendTx(
@@ -16,7 +15,6 @@ export async function sendTx(
     tx.txn.message.recentBlockhash = (
       await connection.getLatestBlockhash("finalized")
     ).blockhash;
-    signTransaction(tx);
     return await connection.sendTransaction(tx.txn, option);
   } catch (error) {
     throw new TransactionExecuteError(`sendTx: ${error}`);

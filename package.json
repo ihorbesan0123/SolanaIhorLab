@@ -1,6 +1,6 @@
 {
   "name": "sol-ihor-lab",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Solana laboratory utility",
   "license": "MIT",
   "scripts": {

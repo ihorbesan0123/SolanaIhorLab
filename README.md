@@ -1,6 +1,6 @@
-# web3-helpers.js
+# sol-ihor-lab
 
-Solana Javascript API
+Solana laboratory utility code
 
 ## Installation
 
@@ -16,7 +16,7 @@ npm install
 #### javascript
 
 ```javascript
-var myApp = require("web3-helpers.js");
+var myApp = require("sol-ihor-lab");
 
 myApp.callbackTransaction(); // print and return " Hello World! "
 ```
@@ -24,7 +24,7 @@ myApp.callbackTransaction(); // print and return " Hello World! "
 #### TypeScript
 
 ```typescript
-import * as myApp from "web3-helpers.js";
+import * as myApp from "sol-ihor-lab";
 
 myApp.callbackTransaction(); // print and return " Hello World! "
 ```

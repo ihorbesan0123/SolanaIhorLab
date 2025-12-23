@@ -1,5 +1,4 @@
 /// <reference types="jito-ts/node_modules/@solana/web3.js" />
-import { CacheLTA, ProgramId } from "@raydium-io/raydium-sdk";
 import { Keypair, PublicKey, Transaction, VersionedTransaction } from "@solana/web3.js";
 export declare enum SPL_ERROR {
     E_INVALID_ARGUE = -1,
@@ -49,10 +48,8 @@ export declare class EnvironmentManager {
     static getRpcNetUrl(): string;
     static setNetUrls(main_url: string, dev_url: string, test_url?: string): void;
     static getBundlrUrl(): string;
-    static getProgramID(): ProgramId;
     static setQuoteTokenInfo(token_info: TOKEN_INFO): void;
     static getQuoteTokenInfo(): TOKEN_INFO;
-    static getCacheLTA(): CacheLTA | undefined;
     static getFeeDestinationId(): PublicKey;
     static getJitoBlockEngine(): string;
     static setJitoKeypair(auth_key: Keypair): void;

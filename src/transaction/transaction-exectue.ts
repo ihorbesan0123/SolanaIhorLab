@@ -3,8 +3,6 @@ import { TransactionInfo } from "../instructions/build-instruction";
 import { TransactionExecuteError } from "../errors";
 import { setTransactionBudget } from "../utils/budget";
 import { confirmTx, sendTx } from "./execute-rpc";
-import { createAndSendBundle } from "./bundle";
-import { connect } from "http2";
 
 export enum ExectuerStatus {
   EXE_STATUS_NONE,
@@ -73,15 +71,7 @@ export class TransactionExecuter {
 
   public async executeBundle() {
     try {
-      this.setExecuterStatus(ExectuerStatus.EXE_STATUS_RUN);
-      await createAndSendBundle(
-        this.connection,
-        this.transactions,
-        this.jitoFeepair!,
-        this.jitoBlockEngine!,
-        this.jitoAuther!,
-        this.jitoFee
-      );
+      this.setExecuterStatus(ExectuerStatus.EXE_STATUS_RUN);      
       this.setExecuterError(undefined);
       this.setExecuterStatus(ExectuerStatus.EXE_STATUS_END);
     } catch (error) {

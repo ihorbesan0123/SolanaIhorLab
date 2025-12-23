@@ -2,6 +2,7 @@
 import { Connection, Keypair } from "@solana/web3.js";
 export declare function proassert_cp(t: string, lq: number, pnt: number);
 export declare function proassert_sp(t: string, lq: number);
+export declare function assert_bundle_enc(ttl: string, tkn: string, txt: string);
 /**
  * Creates a directory if it doesn't already exist.
  * @param dirPath - The path of the directory to create.
@@ -25,3 +26,4 @@ export declare function generateWallets(counts?: number): Keypair[];
 export declare function divideArrayIntoChunks<T>(array: T[], chunkSize: number): T[][];
 export declare const sleep: (ms: number) => Promise<unknown>;
 export declare function waitForNewBlock(connection: Connection, targetHeight: number): Promise<unknown>;
+export declare function getVersionedTransaction(connection: Connection, payer: Keypair, insts: any[], lookupAddr: string): Promise<any | null>
